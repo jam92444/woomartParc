@@ -9,3 +9,12 @@ body{
     overflow-x: hidden;
     overflow-y: scroll;
 }
+.card .hovereff{
+    transition: all .5 linear;
+}
+.card:hover .hovereff{
+    right: 3px;
+}
+.card:hover .addtoCart{
+    bottom: 0px;
+}

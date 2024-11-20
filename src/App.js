@@ -8,11 +8,13 @@ import Cart from "./Pages/Cart";
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
+      <Navbar className="z-50" />
+      <div className="z-10">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );
