@@ -6,22 +6,40 @@ import { IoCartOutline } from "react-icons/io5";
 import logo from "../assets/logo.svg";
 import { CategoryIcons, menuItem } from "../assets/constants";
 import { RxCross1 } from "react-icons/rx";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState("Categories");
   const [open, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false); // state to track scroll
+  const [scrolled, setScrolled] = useState(false); 
+  const navigate = useNavigate()
   const menuItems = [
-    "Cases",
-    "Straps",
-    "Power Banks",
-    "Cables",
-    "MagSafe",
-    "Charger",
-    "More",
+    {
+      title: "Cases",
+      path:'/category/cases'
+    },
+    {
+      title: "Straps",
+      path:'/category/straps'
+    },
+    {
+      title: "Power Banks",
+      path:'/category/powerbanks'
+    },
+    {
+      title: "Cables",
+      path:'/category/cables'
+    },
+    {
+      title: "Charger",
+      path:'/category/charger'
+    },
+    {
+      title: "More",
+      path:'/'
+    }
   ];
 
-  // Check scroll position and update state
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -32,8 +50,6 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -49,7 +65,7 @@ const Navbar = () => {
           <FaBars />
         </div>
         {/* logo */}
-        <div>
+        <div onClick={()=>navigate('/')}>
           <img className="w-[180px]" src={logo} alt="Logo" />
         </div>
         {/* menuitems */}
@@ -57,7 +73,7 @@ const Navbar = () => {
           <ul className="flex text-sm items-center py-3 gap-10 text-gray-900">
             {menuItems.map((items, index) => (
               <li key={index} className="hover:text-blue-600">
-                <a href="/">{items}</a>
+                <a href={items.path}>{items.title}</a>
               </li>
             ))}
           </ul>

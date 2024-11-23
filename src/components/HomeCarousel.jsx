@@ -35,14 +35,14 @@ const HomeCarousel = () => {
               />
             </div>
             <div
-              className={`absolute top-[20px] md:top-1/3 lg:1/4 xl:1/4  left-5 w-3/4 lg:w-1/2 flex flex-col gap-2 lg:gap-6 h-full transition-all duration-500 ease-in-out ${
+              className={`absolute top-[20px] md:top-1/3 lg:1/4 xl:1/4  left-5 w-3/4 lg:w-1/2 flex flex-col gap-1 lg:gap-6 h-full transition-all duration-500 ease-in-out ${
                 index === activeIndex ? "opacity-100" : "opacity-0"
               }`}
             >
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-7xl font-medium">
                 {item.title}
               </h1>
-              <p className="text-sm sm:text-sm w-2/3 mt-4 2xl:text-2xl">{item.para}</p>
+              <p className="text-xs sm:text-sm w-2/3 mt-1 md:mt-4 2xl:text-2xl">{item.para}</p>
 
               <div className="flex gap-4 mt-4">
                 <button className="px-3 py-1 sm:px-6  sm:py-4 bg-blue-600 text-white rounded-md font-medium text-xs md:text-sm 2xl:text-2xl">

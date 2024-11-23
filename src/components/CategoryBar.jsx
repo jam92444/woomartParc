@@ -1,7 +1,13 @@
 import React from "react";
 import assets from "../assets/constants";
+import { useNavigate } from "react-router-dom";
 
 const CategoryBar = () => {
+  const navigate = useNavigate();
+  const handleCategory = (categoryName)=>{
+    navigate(`/category/${categoryName}`);
+    
+  }
   const Categories = [
     {
       title: "Cases",
@@ -43,7 +49,7 @@ const CategoryBar = () => {
   return (
     <div className="w-full mt-4 py-4 px-8 flex items-center justify-between flex-wrap">
       {Categories.map((item, index) => (
-        <div key={index} className="mt-3 cursor-pointer flex flex-col gap-2 items-center flex-wrap ">
+        <div key={index} onClick={()=>handleCategory(item.category)} className="mt-3 cursor-pointer flex flex-col gap-2 items-center flex-wrap ">
           <img
             className="w-28 2xl:w-48 rounded-full"
             src={item.imageUrl}

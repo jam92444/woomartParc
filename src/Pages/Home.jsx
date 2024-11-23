@@ -5,6 +5,8 @@ import NewArrivals from '../components/NewArrivals'
 import Service from '../components/Service'
 import Banner from '../components/Banner'
 import PopularProducts from '../components/PopularProducts'
+import BlogCard from '../components/BlogCard'
+import Photo from '../components/Photo'
 
 const Home = () => {
   return (
@@ -15,6 +17,8 @@ const Home = () => {
       <Service/>
       <Banner/>
       <PopularProducts/>
+      <BlogCard/>
+      <Photo/>
     </div>
   )
 }

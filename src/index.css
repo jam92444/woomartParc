@@ -18,3 +18,7 @@ body{
 .card:hover .addtoCart{
     bottom: 0px;
 }
+
+::-webkit-scrollbar{
+    display: none;
+}

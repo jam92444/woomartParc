@@ -1,12 +1,12 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import Title from "./Title";
 import ProductCard from "./ProductCard";
 import assets from "../assets/constants";
+import { useNavigate } from "react-router-dom";
 
 const NewArrivals = () => {
   const [activeTab, setActiveTab] = useState("Cases");
-  console.log(activeTab);
-  
+
   const products = assets.products;
 
   const titles = ["Cases", "Straps", "Magsafe"];
@@ -16,12 +16,11 @@ const NewArrivals = () => {
   const strapProducts = products
     .filter((item) => item.category === "straps")
     .slice(0, 10);
-  console.log(strapProducts);
 
   const magsafeProducts = products
     .filter((item) => item.category === "Accessories")
     .slice(0, 10);
-  console.log(magsafeProducts);
+  const navigate = useNavigate();
 
   return (
     <div className="pl-2 md:pl-0 w-full overflow-x-hidden">
@@ -32,8 +31,9 @@ const NewArrivals = () => {
       />
       <div className="py-2">
         <div className="flex gap-8 items-center  justify-center">
-          {titles.map((item) => (
+          {titles.map((item, index) => (
             <p
+              key={index}
               onClick={() => setActiveTab(item)}
               className={`text-gray-400 font-medium uppercase cursor-pointer text-md ${
                 activeTab === item
@@ -50,22 +50,39 @@ const NewArrivals = () => {
             casesProducts.map((item, index) => (
               <ProductCard
                 key={index}
+                id={item.id}
+                category={item.category}
+                onClick={() => navigate(`products/${item.id}`)}
                 productName={item.productName}
                 brand={item.brand}
                 price={item.Price}
                 image={item.imageUrl}
               />
             ))}
-            {
-              activeTab === "Magsafe" && magsafeProducts.map((item,index)=>(
-                <ProductCard key={index} productName={item.productName} price={item.price} brand={item.brand} image={item.imageUrl} />
-              ))
-            }
-            {
-              activeTab === "Straps" && strapProducts.map((item,index)=>(
-                <ProductCard key={index} productName={item.productName} price={item.price} brand={item.brand} image={item.imageUrl} />
-              ))
-            }
+          {activeTab === "Magsafe" &&
+            magsafeProducts.map((item, index) => (
+              <ProductCard
+                category={item.category}
+                key={index}
+                id={item.id}
+                productName={item.productName}
+                price={item.price}
+                brand={item.brand}
+                image={item.imageUrl}
+              />
+            ))}
+          {activeTab === "Straps" &&
+            strapProducts.map((item, index) => (
+              <ProductCard
+                key={index}
+                category={item.category}
+                id={item.id}
+                productName={item.productName}
+                price={item.price}
+                brand={item.brand}
+                image={item.imageUrl}
+              />
+            ))}
         </div>
       </div>
     </div>

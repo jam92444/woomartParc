@@ -6,7 +6,7 @@ const Banner = () => {
         <div className="flex flex-col lg:flex-row w-[100%] items-center justify-between gap-4">
             <div className="w-full lg:w-[40%] mb-2 relative overflow-hidden rounded-md">
                 <div className='w-full overflow-hidden rounded-md'>
-                    <img className='w-full transition-all h-[250px] md:h-[350px] rounded-md hover:scale-110' src='https://woodmart.b-cdn.net/accessories/wp-content/uploads/sites/7/2022/08/accessories-banner-1.jpg.webp' alt="" />
+                    <img className='w-full transition-all h-[180px] md:h-[350px] rounded-md hover:scale-110' src='https://woodmart.b-cdn.net/accessories/wp-content/uploads/sites/7/2022/08/accessories-banner-1.jpg.webp' alt="" />
                 </div>
                 <div className='absolute top-0 left-0 flex flex-col items-start justify-center gap-2 md:gap-4 p-8'>
                     <p className=' font-normal text-sm md:text-lg text-blue-600'>Something completely new</p>
@@ -16,7 +16,7 @@ const Banner = () => {
             </div>
             <div className="w-full lg:w-[60%] mb-2  relative overflow-hidden rounded-md">
                 <div className='w-full overflow-hidden rounded-md'>
-                    <img className='w-full transition-all h-[250px] md:h-[350px] rounded-md hover:scale-110' src='https://woodmart.b-cdn.net/accessories/wp-content/uploads/sites/7/2022/04/accessories-banner-2.jpg.webp' alt="" />
+                    <img className='w-full transition-all h-[180px] md:h-[350px] rounded-md hover:scale-110' src='https://woodmart.b-cdn.net/accessories/wp-content/uploads/sites/7/2022/04/accessories-banner-2.jpg.webp' alt="" />
                 </div>
                 <div className='absolute top-0 left-0 flex flex-col items-start justify-center gap-2 md:gap-4 p-8'>
                     <p className=' font-normal text-sm md:text-lg text-blue-600'>Accessories for watch</p>
@@ -29,7 +29,7 @@ const Banner = () => {
         <div className="flex flex-col lg:flex-row w-full items-center justify-between gap-4">
             <div className="w-full lg:w-[60%] mb-2   relative overflow-hidden rounded-md">
                 <div className='w-full overflow-hidden rounded-md'>
-                    <img className='w-full transition-all h-[250px] md:h-[350px] rounded-md hover:scale-110' src='https://woodmart.b-cdn.net/accessories/wp-content/uploads/sites/7/2022/04/accessories-banner-3.jpg.webp' alt="" />
+                    <img className='w-full transition-all h-[180px] md:h-[350px] rounded-md hover:scale-110' src='https://woodmart.b-cdn.net/accessories/wp-content/uploads/sites/7/2022/04/accessories-banner-3.jpg.webp' alt="" />
                 </div>
                 <div className='absolute top-0 left-0 flex flex-col items-start justify-center gap-2 md:gap-4 p-8'>
                     <p className=' font-normal text-sm md:text-lg text-blue-600'>Special offer</p>
@@ -39,7 +39,7 @@ const Banner = () => {
             </div>
             <div className="w-full lg:w-[40%] mb-2  relative overflow-hidden rounded-md">
                 <div className='w-full overflow-hidden rounded-md'>
-                    <img className='w-full transition-all h-[250px] md:h-[350px] rounded-md hover:scale-110' src='https://woodmart.b-cdn.net/accessories/wp-content/uploads/sites/7/2022/09/wood-accessories-category-4-opt.jpg.webp' alt="" />
+                    <img className='w-full transition-all h-[180px] md:h-[350px] rounded-md hover:scale-110' src='https://woodmart.b-cdn.net/accessories/wp-content/uploads/sites/7/2022/09/wood-accessories-category-4-opt.jpg.webp' alt="" />
                 </div>
                 <div className='absolute top-0 left-0 flex flex-col items-start justify-center gap-2 md:gap-4 p-8'>
                     <p className=' font-normal text-sm md:text-lg text-blue-600'>Try something completely</p>
