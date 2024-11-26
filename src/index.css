@@ -2,23 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 
-body{
-    font-family: "Jost", sans-serif;
-    overflow-x: hidden;
-    overflow-y: scroll;
+body {
+  font-family: "Jost", sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
-.card .hovereff{
-    transition: all .5 linear;
+.card .hovereff {
+  transition: all 0.5 linear;
 }
-.card:hover .hovereff{
-    right: 3px;
+.card:hover .hovereff {
+  right: 3px;
 }
-.card:hover .addtoCart{
-    bottom: 0px;
+.card:hover .addtoCart {
+  bottom: 0px;
 }
 
-::-webkit-scrollbar{
-    display: none;
+::-webkit-scrollbar {
+  display: none;
+}
+
+input {
+  outline: none;
+  border-radius: 25px;
+  border: 1px solid rgb(219, 218, 218);
+  padding: 4px;
+  font-size: 16px;
 }

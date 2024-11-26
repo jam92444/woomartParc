@@ -1,0 +1,80 @@
+/* Slider Container */
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 20px auto;
+}
+
+/* Slider itself */
+.slider {
+  display: flex;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Product Cards wrapper */
+.product-cards {
+  display: flex;
+  
+}
+
+/* Individual Product Card */
+.product-card {
+  flex: 0 0 auto;
+  width: 300px;
+  margin-right: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  text-align: center;
+}
+
+/* Card Image */
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Card Title and Price */
+.product-card h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* Navigation Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-card {
+    width: 200px;
+  }
+}

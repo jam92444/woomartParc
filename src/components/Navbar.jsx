@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { FaBars, FaCross } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 import { GoGitCompare, GoSearch } from "react-icons/go";
@@ -7,37 +7,38 @@ import logo from "../assets/logo.svg";
 import { CategoryIcons, menuItem } from "../assets/constants";
 import { RxCross1 } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
+import { ShopContext } from "../context/AppContext";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState("Categories");
   const [open, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false); 
-  const navigate = useNavigate()
+  const [scrolled, setScrolled] = useState(false);
+  const { navigate, setLoginOpen, user } = useContext(ShopContext);
   const menuItems = [
     {
       title: "Cases",
-      path:'/category/cases'
+      path: "/category/cases",
     },
     {
       title: "Straps",
-      path:'/category/straps'
+      path: "/category/straps",
     },
     {
       title: "Power Banks",
-      path:'/category/powerbanks'
+      path: "/category/powerbanks",
     },
     {
       title: "Cables",
-      path:'/category/cables'
+      path: "/category/cables",
     },
     {
       title: "Charger",
-      path:'/category/charger'
+      path: "/category/charger",
     },
     {
       title: "More",
-      path:'/'
-    }
+      path: "/",
+    },
   ];
 
   useEffect(() => {
@@ -56,7 +57,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`sticky top-0 z-50 ${scrolled ? "bg-white shadow-md" : ""}`}>
+    <div
+      className={`sticky top-0 z-50 ${scrolled ? "bg-white shadow-md" : ""}`}
+    >
       <div className="py-2 px-6 flex items-center justify-between font-medium">
         <div
           onClick={() => setIsOpen(!open)}
@@ -65,7 +68,7 @@ const Navbar = () => {
           <FaBars />
         </div>
         {/* logo */}
-        <div onClick={()=>navigate('/')}>
+        <div onClick={() => navigate("/")}>
           <img className="w-[180px]" src={logo} alt="Logo" />
         </div>
         {/* menuitems */}
@@ -80,13 +83,10 @@ const Navbar = () => {
         </div>
         {/* loginandmore */}
         <div className="flex items-center gap-5">
-          <p className="hover:text-gray-500 text-sm hidden lg:block">
-            Login /Register
-          </p>
-          <div className="relative hover:text-gray-500 hidden lg:block">
+          <div className="relative hover:text-gray-500 hidden cursor-pointer lg:block">
             <GoSearch className="text-xl" />
           </div>
-          <div className="relative hover:text-gray-500 hidden lg:block">
+          <div className="relative hover:text-gray-500 hidden cursor-pointer lg:block">
             <GoGitCompare className="text-xl" />
             <div className="absolute top-[-10px] right-[-10px] text-xs bg-blue-500 text-white w-4 h-4 flex items-center justify-center rounded-full">
               <p>0</p>
@@ -104,7 +104,21 @@ const Navbar = () => {
               <p>0</p>
             </div>
           </div>
-          <p className="text-sm hover:text-gray-500 hidden lg:block">$0.00</p>
+          {user.userName && user ? (
+            <p
+              onClick={() => navigate("/login")}
+              className="hover:text-gray-500 bg-black rounded-full text-white p-1 place-content-center w-10 h-10 text-sm text-center hidden cursor-pointer sm:flex items-center justify-center lg:block"
+            >
+              {user.userName[0]}
+            </p>
+          ) : (
+            <p
+              onClick={() => navigate("/login")}
+              className="hover:text-gray-500 text-sm hidden cursor-pointer lg:block"
+            >
+              Login /Register
+            </p>
+          )}
         </div>
       </div>
 

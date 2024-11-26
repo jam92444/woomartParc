@@ -9,7 +9,7 @@ const ProductCard = ({ id, image, price, productName, brand ,category}) => {
   return (
     <div
       onClick={() => navigate(`/category/${category}/products/${id}`)}
-      className="relative w-40 md:w-56 flexflex-col gap-2 cursor-pointer p-2"
+      className="relative w-40 md:w-56 z-20 flexflex-col gap-2 cursor-pointer p-2"
     >
       <div className="relative card md:h-56  overflow-hidden rounded-lg">
         <img

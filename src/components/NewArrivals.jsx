@@ -18,7 +18,7 @@ const NewArrivals = () => {
     .slice(0, 10);
 
   const magsafeProducts = products
-    .filter((item) => item.category === "Accessories")
+    .filter((item) => item.category === "powerbanks")
     .slice(0, 10);
   const navigate = useNavigate();
 
